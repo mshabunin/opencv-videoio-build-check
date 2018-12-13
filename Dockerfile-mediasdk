@@ -1,0 +1,13 @@
+ARG BASE
+FROM ${BASE}
+
+RUN apt install -y \
+    libdrm2 \
+    lsb-release
+
+ARG MEDIASDK_VER=intel-mediasdk-18.3.1
+ADD https://github.com/Intel-Media-SDK/MediaSDK/releases/download/intel-mediasdk-18.3.1/MediaStack.tar.gz /mediasdk/
+RUN tar -C /mediasdk -xf /mediasdk/MediaStack.tar.gz
+WORKDIR /mediasdk/MediaStack
+RUN ./install_media.sh
+ENV MFX_HOME=/opt/intel/mediasdk

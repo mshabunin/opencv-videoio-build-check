@@ -1,0 +1,10 @@
+ARG BASE
+FROM ${BASE}
+
+RUN apt install -y \
+    libtiff5
+
+ADD https://www.ximea.com/downloads/recent/XIMEA_Linux_SP.tgz /ximea/
+RUN tar -C /ximea -xf /ximea/XIMEA_Linux_SP.tgz
+WORKDIR /ximea/package
+RUN ./scripts/install_steps -x64 -noudev -silent

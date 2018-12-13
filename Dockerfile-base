@@ -1,0 +1,14 @@
+FROM ubuntu:18.04
+
+RUN apt-get update && apt-get install -y \
+    cmake \
+    ninja-build \
+    g++ \
+    wget \
+    tar \
+    gzip \
+    pkg-config \
+    ccache \
+    git
+
+ENV CCACHE_DIR=/cache

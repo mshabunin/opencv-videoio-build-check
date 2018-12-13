@@ -1,0 +1,17 @@
+ARG BASE
+FROM ${BASE}
+
+RUN apt install -y \
+    libglib2.0-dev \
+    libxml2-dev \
+    automake \
+    intltool \
+    gtk-doc-tools \
+    libtool \
+    gettext
+
+ARG ARAVIS_VER=ARAVIS_0_6_0
+ADD https://github.com/AravisProject/aravis/archive/${ARAVIS_VER}.tar.gz /aravis/
+RUN tar -C /aravis -xf /aravis/${ARAVIS_VER}.tar.gz
+WORKDIR /aravis/aravis-${ARAVIS_VER}
+RUN ./autogen.sh && make -j4 install

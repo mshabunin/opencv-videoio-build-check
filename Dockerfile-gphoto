@@ -1,0 +1,5 @@
+ARG BASE
+FROM ${BASE}
+
+RUN apt-get update && apt-get install -y \
+    libgphoto2-dev

@@ -1,0 +1,7 @@
+ARG BASE
+FROM ${BASE}
+
+ADD https://www.alliedvision.com/fileadmin/content/software/software/PvAPI/PvAPI_1.28_Linux.tgz /pvapi/
+RUN tar -C /pvapi -xf /pvapi/PvAPI_1.28_Linux.tgz
+WORKDIR "/pvapi/AVT GigE SDK"
+ENV PVAPI_ROOT="/pvapi/AVT GigE SDK"

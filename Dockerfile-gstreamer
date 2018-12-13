@@ -1,0 +1,7 @@
+ARG BASE
+FROM ${BASE}
+
+RUN apt-get update && apt-get install -y \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libgstreamer-plugins-good1.0-dev

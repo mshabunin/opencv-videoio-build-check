@@ -1,0 +1,8 @@
+ARG BASE
+FROM ${BASE}
+
+RUN apt-get update && apt-get install -y \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev \
+    libavresample-dev
