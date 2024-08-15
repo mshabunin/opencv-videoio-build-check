@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
 RUN apt-get update && apt-get install -y \
     cmake \
@@ -10,5 +10,3 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     ccache \
     git
-
-ENV CCACHE_DIR=/cache

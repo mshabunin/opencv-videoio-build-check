@@ -9,4 +9,4 @@ Prerequisites:
 
 Instruction:
 * `cd <source-dir>`
-* `./do.sh`
+* `./run.sh`

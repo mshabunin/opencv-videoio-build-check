@@ -5,10 +5,11 @@ RUN apt install -y \
     libusb-1.0-0-dev \
     libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev \
     libssl-dev \
-    libgtk-3-dev
+    libgtk-3-dev \
+    libudev-dev
 
-ARG REALSENSE_VER=2.17.0
+ARG REALSENSE_VER=2.55.1
 ADD https://github.com/IntelRealSense/librealsense/archive/v${REALSENSE_VER}.tar.gz /realsense/
 RUN tar -C /realsense -xf /realsense/v${REALSENSE_VER}.tar.gz
 WORKDIR /realsense/librealsense-${REALSENSE_VER}
-RUN mkdir build && cd build && cmake -GNinja .. && ninja install
+RUN mkdir build && cd build && cmake -GNinja -DBUILD_EXAMPLES=OFF -DBUILD_TOOLS=OFF .. && ninja install

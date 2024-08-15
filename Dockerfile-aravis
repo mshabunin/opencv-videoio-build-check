@@ -8,10 +8,11 @@ RUN apt install -y \
     intltool \
     gtk-doc-tools \
     libtool \
-    gettext
+    gettext \
+    meson
 
-ARG ARAVIS_VER=ARAVIS_0_6_0
+ARG ARAVIS_VER=0.8.31
 ADD https://github.com/AravisProject/aravis/archive/${ARAVIS_VER}.tar.gz /aravis/
 RUN tar -C /aravis -xf /aravis/${ARAVIS_VER}.tar.gz
 WORKDIR /aravis/aravis-${ARAVIS_VER}
-RUN ./autogen.sh && make -j4 install
+RUN meson setup build && cd build && meson install
