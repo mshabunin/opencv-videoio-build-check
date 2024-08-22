@@ -29,16 +29,16 @@ docker run -it \
 
 #=====================================
 
-# test_one base
-# test_one ffmpeg -DWITH_FFMPEG=ON
-# test_one gstreamer -DWITH_GSTREAMER=ON
-# test_one v4l -DWITH_V4L=ON
+test_one base
+test_one ffmpeg -DWITH_FFMPEG=ON
+test_one gstreamer -DWITH_GSTREAMER=ON
+test_one v4l -DWITH_V4L=ON
 # test_one aravis -DWITH_ARAVIS=ON
-# test_one dc1394 -DWITH_1394=ON
-# test_one gphoto -DWITH_GPHOTO2=ON
-# test_one openni -DWITH_OPENNI2=ON
-# test_one mediasdk -DWITH_MFX=ON -DWITH_LIBVA=ON
-# test_one realsense -DWITH_LIBREALSENSE=ON
+test_one dc1394 -DWITH_1394=ON
+test_one gphoto -DWITH_GPHOTO2=ON
+test_one openni -DWITH_OPENNI2=ON
+test_one mediasdk -DWITH_MFX=ON -DWITH_LIBVA=ON
+test_one realsense -DWITH_LIBREALSENSE=ON
 test_one ximea -DWITH_XIMEA=ON
 test_one xine -DWITH_XINE=ON
 test_one pvapi -DWITH_PVAPI=ON
